@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorldThree", "HelloWorldThree\HelloWorldThree.csproj", "{F1090626-5321-4D9B-97AA-733F35C34879}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorldThreeAndroid", "HelloWorldThreeAndroid\HelloWorldThreeAndroid.csproj", "{F224F33C-17F0-42DA-A9A0-6F30B177D3E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorldThreeLinux", "HelloWorldThreeLinux\HelloWorldThreeLinux.csproj", "{3218F9C1-4746-4793-BEDD-5FF9BADBC67E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3218F9C1-4746-4793-BEDD-5FF9BADBC67E}.Debug|x86.ActiveCfg = Debug|x86
+		{3218F9C1-4746-4793-BEDD-5FF9BADBC67E}.Debug|x86.Build.0 = Debug|x86
+		{3218F9C1-4746-4793-BEDD-5FF9BADBC67E}.Release|x86.ActiveCfg = Release|x86
+		{3218F9C1-4746-4793-BEDD-5FF9BADBC67E}.Release|x86.Build.0 = Release|x86
+		{F1090626-5321-4D9B-97AA-733F35C34879}.Debug|x86.ActiveCfg = Debug|x86
+		{F1090626-5321-4D9B-97AA-733F35C34879}.Debug|x86.Build.0 = Debug|x86
+		{F1090626-5321-4D9B-97AA-733F35C34879}.Release|x86.ActiveCfg = Release|x86
+		{F1090626-5321-4D9B-97AA-733F35C34879}.Release|x86.Build.0 = Release|x86
+		{F224F33C-17F0-42DA-A9A0-6F30B177D3E9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F224F33C-17F0-42DA-A9A0-6F30B177D3E9}.Debug|x86.Build.0 = Debug|Any CPU
+		{F224F33C-17F0-42DA-A9A0-6F30B177D3E9}.Release|x86.ActiveCfg = Release|Any CPU
+		{F224F33C-17F0-42DA-A9A0-6F30B177D3E9}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = HelloWorldThreeLinux\HelloWorldThreeLinux.csproj
+	EndGlobalSection
+EndGlobal
