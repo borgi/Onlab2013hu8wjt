@@ -22,6 +22,10 @@ namespace WPHelloWorld
         SpriteFont sf;
         Vector2 textpos = new Vector2(0, 0);
 
+        Model myModel;
+
+        float aspectRatio;
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -57,6 +61,9 @@ namespace WPHelloWorld
             spriteBatch = new SpriteBatch(GraphicsDevice);
             sf = Content.Load<SpriteFont>("SpriteFont1");
 
+            myModel = Content.Load<Model>("Models/hayl");
+            aspectRatio = graphics.GraphicsDevice.Viewport.AspectRatio;
+
             // TODO: use this.Content to load your game content here
         }
 
@@ -82,8 +89,19 @@ namespace WPHelloWorld
 
             // TODO: Add your update logic here
             textpos.X = (textpos.X + 0.05F) % 100;
+
+            modelRotation += (float)gameTime.ElapsedGameTime.TotalMilliseconds *
+    MathHelper.ToRadians(0.1f);
+
             base.Update(gameTime);
         }
+
+        Vector3 modelPosition = Vector3.Zero;
+        float modelRotation = 0.0f;
+
+        // Set the position of the camera in world space, for our view matrix.
+        Vector3 cameraPosition = new Vector3(0.0f, 50.0f, 1500.0f);
+
 
         /// <summary>
         /// This is called when the game should draw itself.
@@ -99,6 +117,33 @@ namespace WPHelloWorld
             //spriteBatch.Draw(image, Vector2.Zero, Color.White);
             spriteBatch.DrawString(sf, "Hello World!", textpos, Color.White);
             spriteBatch.End();
+
+            // Copy any parent transforms.
+            Matrix[] transforms = new Matrix[myModel.Bones.Count];
+            myModel.CopyAbsoluteBoneTransformsTo(transforms);
+
+            // Draw the model. A model can have multiple meshes, so loop.
+            foreach (ModelMesh mesh in myModel.Meshes)
+            {
+                // This is where the mesh orientation is set, as well 
+                // as our camera and projection.
+                foreach (BasicEffect effect in mesh.Effects)
+                {
+                    effect.EnableDefaultLighting();
+                    //effect.TextureEnabled = true;
+                    effect.World = transforms[mesh.ParentBone.Index] *
+                        Matrix.CreateRotationY(modelRotation) * Matrix.CreateRotationX(modelRotation/2.0f) 
+                        * Matrix.CreateTranslation(modelPosition);
+                    effect.View = Matrix.CreateLookAt(cameraPosition,
+                        Vector3.Zero, Vector3.Up);
+                    effect.Projection = Matrix.CreatePerspectiveFieldOfView(
+                        MathHelper.ToRadians(45.0f), aspectRatio,
+                        1.0f, 10000.0f);
+                    
+                }
+                // Draw the mesh, using the effects set above.
+                mesh.Draw();
+            }
 
             base.Draw(gameTime);
         }

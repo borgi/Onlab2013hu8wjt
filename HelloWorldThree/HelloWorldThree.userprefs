@@ -1,12 +1,13 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|x86" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="HelloWorldThreeAndroid\Activity1.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="HelloWorldThreeAndroid\Game1.cs">
     <Files>
-      <File FileName="HelloWorldThree\Game1.cs" Line="88" Column="1" />
+      <File FileName="HelloWorldThree\Game1.cs" Line="1" Column="1" />
       <File FileName="c:\Users\aronka\Documents\GitHub\Onlab2013hu8wjt\HelloWorldThree\HelloWorldThree\Program.cs" Line="1" Column="1" />
       <File FileName="HelloWorldThreeAndroid\Assets\AboutAssets.txt" Line="1" Column="1" />
-      <File FileName="HelloWorldThreeAndroid\Game1.cs" Line="69" Column="10" />
-      <File FileName="HelloWorldThreeAndroid\Activity1.cs" Line="15" Column="21" />
+      <File FileName="HelloWorldThreeAndroid\Game1.cs" Line="57" Column="3" />
+      <File FileName="HelloWorldThreeAndroid\Activity1.cs" Line="1" Column="1" />
+      <File FileName="HelloWorldThreeLinux\Game1.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
